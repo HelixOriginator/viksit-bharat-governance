@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Governance Twin — Civilizationally Rooted Policy Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        ::selection { background: rgba(59,130,246,0.3); color: #bfdbfe; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        html { scroll-behavior: smooth; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.06; }
+            50% { opacity: 0.12; }
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes grid-pulse {
+            0%, 100% { opacity: 0.03; }
+            50% { opacity: 0.07; }
+        }
+        @keyframes count-up {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes border-glow {
+            0%, 100% { border-color: rgba(59,130,246,0.15); }
+            50% { border-color: rgba(59,130,246,0.35); }
+        }
+        @keyframes icon-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-3px) rotate(1deg); }
+            75% { transform: translateY(2px) rotate(-1deg); }
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-700 { animation-delay: 0.7s; }
+
+        .glow-orb { animation: pulse-slow 6s ease-in-out infinite; }
+        .float-anim { animation: float 5s ease-in-out infinite; }
+        .icon-float-anim { animation: icon-float 4s ease-in-out infinite; }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 0%, #3b82f6 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-text-blue {
+            background: linear-gradient(135deg, #93c5fd, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .gradient-text-amber {
+            background: linear-gradient(135deg, #fcd34d, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            backdrop-filter: blur(12px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            transform: translateY(-2px);
+        }
+
+        .recognition-card {
+            background: rgba(255,255,255,0.015);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .recognition-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .recognition-card:hover::before { opacity: 1; }
+        .recognition-card:hover {
+            border-color: rgba(59,130,246,0.2);
+            background: rgba(59,130,246,0.03);
+            transform: translateY(-4px);
+        }
+
+        .module-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .module-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(59,130,246,0.04), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .module-card:hover::after { opacity: 1; }
+        .module-card:hover {
+            border-color: rgba(59,130,246,0.15);
+            transform: translateY(-3px);
+        }
+
+        .shimmer-line {
+            background: linear-gradient(90deg, rgba(59,130,246,0) 0%, rgba(59,130,246,0.3) 50%, rgba(59,130,246,0) 100%);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        .stat-number {
+            animation: count-up 0.6s ease-out forwards;
+        }
+
+        .nav-glass {
+            background: rgba(5,5,5,0.7);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .cta-btn {
+            background: #ffffff;
+            color: #000000;
+            transition: all 0.3s;
+        }
+        .cta-btn:hover {
+            background: #e5e5e5;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 30px rgba(255,255,255,0.1);
+        }
+
+        .cta-btn-outline {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        .cta-btn-outline:hover {
+            border-color: rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .elevator-pitch {
+            background: linear-gradient(135deg, rgba(59,130,246,0.05) 0%, rgba(245,158,11,0.03) 100%);
+            border: 1px solid rgba(59,130,246,0.12);
+        }
+
+        .flow-arrow {
+            color: rgba(59,130,246,0.4);
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+        }
+
+        .badge {
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.2);
+            color: #93c5fd;
+        }
+        .badge-amber {
+            background: rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.2);
+            color: #fcd34d;
+        }
+        .badge-green {
+            background: rgba(34,197,94,0.1);
+            border: 1px solid rgba(34,197,94,0.2);
+            color: #86efac;
+        }
+        .badge-purple {
+            background: rgba(168,85,247,0.1);
+            border: 1px solid rgba(168,85,247,0.2);
+            color: #d8b4fe;
+        }
+        .badge-rose {
+            background: rgba(244,63,94,0.1);
+            border: 1px solid rgba(244,63,94,0.2);
+            color: #fda4af;
+        }
+
+        .timeline-dot {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background: #3b82f6;
+            box-shadow: 0 0 12px rgba(59,130,246,0.4);
+        }
+
+        .grid-bg {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: grid-pulse 8s ease-in-out infinite;
+        }
+
+        /* Platform Button Styles */
+        .platform-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 28px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            text-decoration: none;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+        .platform-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s;
+            border-radius: 20px;
+        }
+        .platform-btn:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.15);
+        }
+        .platform-btn:hover::before {
+            opacity: 1;
+        }
+        .platform-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .platform-btn .btn-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.5s;
+        }
+        .platform-btn:hover .btn-icon {
+            transform: scale(1.08);
+        }
+
+        .platform-btn .btn-arrow {
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .platform-btn:hover .btn-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Variant: Saffron / Modi Quiz */
+        .platform-btn-saffron::before {
+            background: linear-gradient(135deg, rgba(255,153,51,0.06), rgba(19,136,8,0.03));
+        }
+        .platform-btn-saffron:hover {
+            border-color: rgba(255,153,51,0.25);
+            box-shadow: 0 8px 40px rgba(255,153,51,0.08);
+        }
+        .platform-btn-saffron .btn-icon {
+            background: linear-gradient(135deg, rgba(255,153,51,0.12), rgba(19,136,8,0.12));
+            border: 1px solid rgba(255,153,51,0.2);
+        }
+
+        /* Variant: Blue / Intelligence */
+        .platform-btn-blue::before {
+            background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(99,102,241,0.03));
+        }
+        .platform-btn-blue:hover {
+            border-color: rgba(59,130,246,0.25);
+            box-shadow: 0 8px 40px rgba(59,130,246,0.08);
+        }
+        .platform-btn-blue .btn-icon {
+            background: linear-gradient(135deg, rgba(59,130,246,0.12), rgba(99,102,241,0.12));
+            border: 1px solid rgba(59,130,246,0.2);
+        }
+
+        /* Variant: Green / Governance Quiz */
+        .platform-btn-green::before {
+            background: linear-gradient(135deg, rgba(34,197,94,0.06), rgba(16,185,129,0.03));
+        }
+        .platform-btn-green:hover {
+            border-color: rgba(34,197,94,0.25);
+            box-shadow: 0 8px 40px rgba(34,197,94,0.08);
+        }
+        .platform-btn-green .btn-icon {
+            background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(16,185,129,0.12));
+            border: 1px solid rgba(34,197,94,0.2);
+        }
+
+        /* Variant: Amber / Knowledge Bank */
+        .platform-btn-amber::before {
+            background: linear-gradient(135deg, rgba(245,158,11,0.06), rgba(234,88,12,0.03));
+        }
+        .platform-btn-amber:hover {
+            border-color: rgba(245,158,11,0.25);
+            box-shadow: 0 8px 40px rgba(245,158,11,0.08);
+        }
+        .platform-btn-amber .btn-icon {
+            background: linear-gradient(135deg, rgba(245,158,11,0.12), rgba(234,88,12,0.12));
+            border: 1px solid rgba(245,158,11,0.2);
+        }
+    </style>
+</head>
+<body class="bg-[#050505] text-white font-sans antialiased overflow-x-hidden">
+
+    <!-- Ambient Background -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute top-[-20%] left-[10%] w-[600px] h-[600px] bg-blue-500 rounded-full filter blur-[200px] glow-orb"></div>
+        <div class="absolute bottom-[-10%] right-[5%] w-[500px] h-[500px] bg-amber-500 rounded-full filter blur-[200px] glow-orb" style="animation-delay: 3s;"></div>
+        <div class="absolute top-[40%] right-[20%] w-[400px] h-[400px] bg-blue-600 rounded-full filter blur-[200px] glow-orb" style="animation-delay: 1.5s;"></div>
+        <div class="grid-bg absolute inset-0"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-glass h-16 flex items-center px-6">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-amber-500 flex items-center justify-center">
+                    <span class="iconify text-white text-sm" data-icon="lucide:hexagon"></span>
+                </div>
+                <span class="font-semibold text-sm tracking-tight">Bharat Governance Twin</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#problem" class="text-sm text-neutral-400 hover:text-white transition-colors duration-300">The Problem</a>
+                <a href="#solution" class="text-sm text-neutral-400 hover:text-white transition-colors duration-300">The Solution</a>
+                <a href="#modules" class="text-sm text-neutral-400 hover:text-white transition-colors duration-300">Intelligence Stack</a>
+                <a href="#platforms" class="text-sm text-neutral-400 hover:text-white transition-colors duration-300">Platforms</a>
+                <a href="#recognition" class="text-sm text-neutral-400 hover:text-white transition-colors duration-300">Recognition</a>
+                <a href="#evidence" class="text-sm text-neutral-400 hover:text-white transition-colors duration-300">Evidence</a>
+                <a href="#briefs" class="text-sm text-neutral-400 hover:text-white transition-colors duration-300">Briefs</a>
+            </div>
+            <a href="#recognition" class="cta-btn px-5 py-2 rounded-full text-xs font-medium">Institutional Access</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 pt-32 pb-16 md:pt-48 md:pb-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-3 mb-8 animate-fade-in-up">
+                <span class="badge text-xs font-medium px-3 py-1.5 rounded-full">Governance Intelligence</span>
+                <span class="badge-amber text-xs font-medium px-3 py-1.5 rounded-full">Dharmic Policy Framework</span>
+                <span class="badge-green text-xs font-medium px-3 py-1.5 rounded-full">Public Systems Design</span>
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl md:text-7xl font-medium tracking-tight leading-[1.08] mb-8 animate-fade-in-up delay-100">
+                India's first civilizationally rooted<br class="hidden md:block">
+                <span class="gradient-text">governance intelligence stack</span>
+            </h1>
+
+            <!-- The 30-Second Pitch -->
+            <div class="elevator-pitch rounded-2xl p-6 md:p-8 max-w-4xl mb-12 animate-fade-in-up delay-200">
+                <p class="text-xs font-medium text-blue-400 uppercase tracking-wider mb-3">30-Second Institutional Pitch</p>
+                <p class="text-lg md:text-xl font-light text-neutral-200 leading-relaxed">
+                    Bharat Governance Twin is an Indian-origin governance intelligence platform that
+                    <span class="text-white font-medium">detects why public schemes leak at the ground level</span> and
+                    <span class="text-white font-medium">shows administrators how to fix them</span> — powered by civilizational knowledge systems turned into measurable public-service improvement logic.
+                </p>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap gap-4 mb-16 animate-fade-in-up delay-300">
+                <a href="#solution" class="cta-btn px-8 py-3.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                    Explore the Stack
+                    <span class="iconify text-base" data-icon="lucide:arrow-down"></span>
+                </a>
+                <a href="#briefs" class="cta-btn-outline px-8 py-3.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                    Government Brief
+                    <span class="iconify text-base" data-icon="lucide:file-text"></span>
+                </a>
+                <a href="#platforms" class="cta-btn-outline px-8 py-3.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                    Live Platforms
+                    <span class="iconify text-base" data-icon="lucide:globe"></span>
+                </a>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl animate-fade-in-up delay-400">
+                <div>
+                    <div class="text-3xl md:text-4xl font-semibold gradient-text-blue stat-number">4</div>
+                    <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider">Intelligence Modules</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-semibold gradient-text-amber stat-number">394+</div>
+                    <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider">Live Platforms</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-semibold gradient-text-blue stat-number">8</div>
+                    <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider">Digital Libraries</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-semibold gradient-text-amber stat-number">1700+</div>
+                    <div class="text-xs text-neutral-500 mt-1 uppercase tracking-wider">Quiz Questions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- The Problem -->
+    <section id="problem" class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-red-400 uppercase tracking-wider mb-4 animate-fade-in-up">The Problem</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6 animate-fade-in-up delay-100">
+                    Flagship welfare schemes leak.<br>
+                    <span class="text-neutral-500">No existing system diagnoses why.</span>
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed animate-fade-in-up delay-200">
+                    India's central schemes — PM-Kisan, scholarships, pensions, land records — are designed with intent but
+                    face implementation friction at the district, block, and gram panchayat level. Current monitoring systems
+                    track <em>outputs</em>, not <em>failure causality</em>. There is no intelligence layer that maps
+                    the full chain: policy intent → field friction → citizen impact → administrative correction.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card rounded-2xl p-6 animate-fade-in-up delay-200">
+                    <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center mb-4">
+                        <span class="iconify text-red-400 text-xl" data-icon="lucide:alert-triangle"></span>
+                    </div>
+                    <h3 class="text-sm font-medium mb-2">Scheme Leakage</h3>
+                    <p class="text-neutral-500 text-xs leading-relaxed">
+                        Benefits fail to reach intended citizens due to eligibility gaps, duplication, bureaucratic bottlenecks, and last-mile delivery failures. No system traces the root cause.
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 animate-fade-in-up delay-300">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4">
+                        <span class="iconify text-amber-400 text-xl" data-icon="lucide:eye-off"></span>
+                    </div>
+                    <h3 class="text-sm font-medium mb-2">Rights Invisibility</h3>
+                    <p class="text-neutral-500 text-xs leading-relaxed">
+                        Citizens do not know what they are entitled to. Grievance systems capture complaints but do not map systemic patterns of rights denial across schemes and geographies.
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 animate-fade-in-up delay-400">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
+                        <span class="iconify text-blue-400 text-xl" data-icon="lucide:unplug"></span>
+                    </div>
+                    <h3 class="text-sm font-medium mb-2">Knowledge-System Disconnect</h3>
+                    <p class="text-neutral-500 text-xs leading-relaxed">
+                        India's civilizational knowledge systems — dharmic ethics, governance logic, duty-rights frameworks — remain archived but not operationalized for public systems design.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- The Solution -->
+    <section id="solution" class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-blue-400 uppercase tracking-wider mb-4">The Solution</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                    Bharat Governance Twin
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+                    A district-, scheme-, and citizen-level intelligence system that maps the full governance chain —
+                    from policy intent to field implementation friction to citizen rights impact to recommended administrative correction.
+                </p>
+            </div>
+
+            <!-- The Flow Diagram -->
+            <div class="glass-card rounded-3xl p-8 md:p-12 mb-12">
+                <p class="text-xs text-neutral-500 uppercase tracking-wider mb-8">Intelligence Flow</p>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2">
+                    <div class="flex-1 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mx-auto mb-3">
+                            <span class="iconify text-blue-400 text-2xl" data-icon="lucide:scroll-text"></span>
+                        </div>
+                        <p class="text-xs font-medium">Policy Intent</p>
+                        <p class="text-[10px] text-neutral-600 mt-1">Scheme design & mandate</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">
+                        <span class="iconify text-2xl" data-icon="lucide:chevron-right"></span>
+                    </div>
+                    <div class="flow-arrow md:hidden">
+                        <span class="iconify text-2xl" data-icon="lucide:chevron-down"></span>
+                    </div>
+                    <div class="flex-1 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mx-auto mb-3">
+                            <span class="iconify text-amber-400 text-2xl" data-icon="lucide:search"></span>
+                        </div>
+                        <p class="text-xs font-medium">Field Friction Detection</p>
+                        <p class="text-[10px] text-neutral-600 mt-1">Leakage & bottleneck mapping</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">
+                        <span class="iconify text-2xl" data-icon="lucide:chevron-right"></span>
+                    </div>
+                    <div class="flow-arrow md:hidden">
+                        <span class="iconify text-2xl" data-icon="lucide:chevron-down"></span>
+                    </div>
+                    <div class="flex-1 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto mb-3">
+                            <span class="iconify text-green-400 text-2xl" data-icon="lucide:users"></span>
+                        </div>
+                        <p class="text-xs font-medium">Citizen Rights Impact</p>
+                        <p class="text-[10px] text-neutral-600 mt-1">Entitlement gap analysis</p>
+                    </div>
+                    <div class="flow-arrow hidden md:block">
+                        <span class="iconify text-2xl" data-icon="lucide:chevron-right"></span>
+                    </div>
+                    <div class="flow-arrow md:hidden">
+                        <span class="iconify text-2xl" data-icon="lucide:chevron-down"></span>
+                    </div>
+                    <div class="flex-1 text-center">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mx-auto mb-3">
+                            <span class="iconify text-purple-400 text-2xl" data-icon="lucide:wrench"></span>
+                        </div>
+                        <p class="text-xs font-medium">Administrative Correction</p>
+                        <p class="text-[10px] text-neutral-600 mt-1">Actionable recommendations</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Key Sentence -->
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="shimmer-line h-px w-32 mx-auto mb-8"></div>
+                <blockquote class="text-xl md:text-2xl font-light text-neutral-300 leading-relaxed italic">
+                    "Not 'we built many knowledge platforms' — but
+                    <span class="text-white font-medium not-italic">we built India's first civilizationally rooted governance intelligence stack</span>
+                    that detects why flagship welfare schemes fail on the ground and shows administrators how to fix them."
+                </blockquote>
+                <div class="shimmer-line h-px w-32 mx-auto mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Intelligence Modules -->
+    <section id="modules" class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-amber-400 uppercase tracking-wider mb-4">Intelligence Stack</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                    Four modules. One system.
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+                    Each module is independently functional. Together, they form the Bharat Governance Twin —
+                    a complete chain from knowledge to governance analytics to policy diagnostics to citizen accountability.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Module 1: Knowledge Bank -->
+                <div class="module-card rounded-3xl p-8 md:p-10" onmousemove="updateMouse(event, this)">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                            <span class="iconify text-amber-400 text-2xl" data-icon="lucide:library"></span>
+                        </div>
+                        <span class="badge-amber text-[10px] font-medium px-2.5 py-1 rounded-full">Knowledge Layer</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-3">Sanatana Knowledge Bank</h3>
+                    <p class="text-neutral-400 text-sm font-light leading-relaxed mb-6">
+                        One of the most comprehensive integrated Sanatana knowledge infrastructures built independently in India.
+                        Cross-domain integration of Vedic philosophy, governance logic, rhetoric, public ethics, and software engineering.
+                        Supplies the conceptual and ethical framework that powers the entire stack.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">8 Digital Libraries</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">394+ Platforms</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Dharmic Ethics</span>
+                    </div>
+                    <a href="https://helixoriginator.github.io/Sanatana-Knowledge-Bank-/" target="_blank" class="text-xs text-amber-400 hover:text-amber-300 transition-colors inline-flex items-center gap-1">
+                        Visit Knowledge Bank <span class="iconify" data-icon="lucide:external-link"></span>
+                    </a>
+                </div>
+
+                <!-- Module 2: Opal Intelligence Engine -->
+                <div class="module-card rounded-3xl p-8 md:p-10" onmousemove="updateMouse(event, this)">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                            <span class="iconify text-blue-400 text-2xl" data-icon="lucide:brain-circuit"></span>
+                        </div>
+                        <span class="badge text-[10px] font-medium px-2.5 py-1 rounded-full">Analytics Layer</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-3">Opal Intelligence Engine</h3>
+                    <p class="text-neutral-400 text-sm font-light leading-relaxed mb-6">
+                        The governance analytics core. Processes scheme data, identifies implementation friction patterns,
+                        maps causality chains from policy design to delivery failure, and generates diagnostic intelligence
+                        for administrators and policymakers.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Causality Mapping</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Friction Detection</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Diagnostics</span>
+                    </div>
+                    <span class="text-xs text-blue-400 inline-flex items-center gap-1">
+                        Core Engine <span class="iconify" data-icon="lucide:cpu"></span>
+                    </span>
+                </div>
+
+                <!-- Module 3: PM-Kisan Policy Intelligence -->
+                <div class="module-card rounded-3xl p-8 md:p-10" onmousemove="updateMouse(event, this)">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center">
+                            <span class="iconify text-green-400 text-2xl" data-icon="lucide:sprout"></span>
+                        </div>
+                        <span class="badge-green text-[10px] font-medium px-2.5 py-1 rounded-full">Policy Pilot</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-3">PM-Kisan Policy Intelligence</h3>
+                    <p class="text-neutral-400 text-sm font-light leading-relaxed mb-6">
+                        A live pilot demonstrating the stack's capability on India's flagship farmer welfare scheme.
+                        Maps benefit leakage, eligibility exclusion, payment delays, and grievance patterns at district and block level.
+                        The proof that this system works on real data.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Live Pilot</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">District-Level</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Leakage Detection</span>
+                    </div>
+                    <a href="https://helixoriginator.github.io/Sanatana-Dharmic-Policy-Intelligence-Platform/" target="_blank" class="text-xs text-green-400 hover:text-green-300 transition-colors inline-flex items-center gap-1">
+                        View Pilot <span class="iconify" data-icon="lucide:external-link"></span>
+                    </a>
+                </div>
+
+                <!-- Module 4: Bharat Rights Dashboard -->
+                <div class="module-card rounded-3xl p-8 md:p-10" onmousemove="updateMouse(event, this)">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                            <span class="iconify text-purple-400 text-2xl" data-icon="lucide:scale"></span>
+                        </div>
+                        <span class="badge-purple text-[10px] font-medium px-2.5 py-1 rounded-full">Accountability Layer</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-3">Bharat Rights Dashboard</h3>
+                    <p class="text-neutral-400 text-sm font-light leading-relaxed mb-6">
+                        The citizen-facing accountability layer. Maps rights entitlements against actual service delivery,
+                        visualizes grievance patterns, and makes duty-rights frameworks legible and actionable for
+                        both administrators and citizens.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Rights Mapping</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Grievance Patterns</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Accountability</span>
+                    </div>
+                    <span class="text-xs text-purple-400 inline-flex items-center gap-1">
+                        Public Interface <span class="iconify" data-icon="lucide:layout-dashboard"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Live Platforms & Interactive Tools -->
+    <section id="platforms" class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-green-400 uppercase tracking-wider mb-4">Live Platforms & Interactive Tools</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                    Explore the ecosystem.
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+                    From civilizational knowledge archives to governance quiz platforms — every tool is built independently,
+                    fully functional, and freely accessible. Click any platform to explore.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5">
+
+                <!-- Button 1: Modi 1000 Quiz Questions -->
+                <a href="https://modi-1000-quiz-questions.netlify.app/" target="_blank" rel="noopener noreferrer" class="platform-btn platform-btn-saffron group">
+                    <div class="btn-icon icon-float-anim">
+                        <span class="iconify text-orange-400 text-2xl" data-icon="lucide:trophy"></span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2.5 mb-1">
+                            <h3 class="text-sm font-medium text-white">Modi 1000 Quiz Questions</h3>
+                            <span class="badge-rose text-[9px] font-semibold px-2 py-0.5 rounded-full shrink-0">1000+</span>
+                        </div>
+                        <p class="text-xs text-neutral-500 font-light leading-relaxed">
+                            The most comprehensive quiz on Prime Minister Narendra Modi's governance, policies, and legacy. 1000+ curated questions for learning and assessment.
+                        </p>
+                    </div>
+                    <div class="btn-arrow">
+                        <span class="iconify text-orange-400 text-xl" data-icon="lucide:arrow-up-right"></span>
+                    </div>
+                </a>
+
+                <!-- Button 2: Modi Governance Quiz (700+) -->
+                <a href="https://helixoriginator.github.io/modi-governance-quiz/" target="_blank" rel="noopener noreferrer" class="platform-btn platform-btn-green group">
+                    <div class="btn-icon icon-float-anim" style="animation-delay: 0.5s;">
+                        <span class="iconify text-green-400 text-2xl" data-icon="lucide:help-circle"></span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2.5 mb-1">
+                            <h3 class="text-sm font-medium text-white">Modi Governance Quiz</h3>
+                            <span class="badge-green text-[9px] font-semibold px-2 py-0.5 rounded-full shrink-0">700+</span>
+                        </div>
+                        <p class="text-xs text-neutral-500 font-light leading-relaxed">
+                            700+ quiz questions on Modi governance architecture, flagship schemes, policy reforms, and digital India transformation.
+                        </p>
+                    </div>
+                    <div class="btn-arrow">
+                        <span class="iconify text-green-400 text-xl" data-icon="lucide:arrow-up-right"></span>
+                    </div>
+                </a>
+
+                <!-- Button 3: Sanatana Intelligence -->
+                <a href="https://sanatana-intelligence.netlify.app/" target="_blank" rel="noopener noreferrer" class="platform-btn platform-btn-blue group">
+                    <div class="btn-icon icon-float-anim" style="animation-delay: 1s;">
+                        <span class="iconify text-blue-400 text-2xl" data-icon="lucide:sparkles"></span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2.5 mb-1">
+                            <h3 class="text-sm font-medium text-white">Sanatana Intelligence</h3>
+                            <span class="badge text-[9px] font-semibold px-2 py-0.5 rounded-full shrink-0">AI</span>
+                        </div>
+                        <p class="text-xs text-neutral-500 font-light leading-relaxed">
+                            AI-powered Sanatana knowledge platform — intelligent search, civilizational reasoning, and dharmic analytics for researchers and practitioners.
+                        </p>
+                    </div>
+                    <div class="btn-arrow">
+                        <span class="iconify text-blue-400 text-xl" data-icon="lucide:arrow-up-right"></span>
+                    </div>
+                </a>
+
+                <!-- Button 4: Sanatana Knowledge Bank -->
+                <a href="https://helixoriginator.github.io/Sanatana-Knowledge-Bank-/" target="_blank" rel="noopener noreferrer" class="platform-btn platform-btn-amber group">
+                    <div class="btn-icon icon-float-anim" style="animation-delay: 1.5s;">
+                        <span class="iconify text-amber-400 text-2xl" data-icon="lucide:library"></span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2.5 mb-1">
+                            <h3 class="text-sm font-medium text-white">Sanatana Knowledge Bank</h3>
+                            <span class="badge-amber text-[9px] font-semibold px-2 py-0.5 rounded-full shrink-0">394+</span>
+                        </div>
+                        <p class="text-xs text-neutral-500 font-light leading-relaxed">
+                            One of the most comprehensive integrated Sanatana knowledge infrastructures — 8 digital libraries, 394+ platforms, and interconnected civilizational archives.
+                        </p>
+                    </div>
+                    <div class="btn-arrow">
+                        <span class="iconify text-amber-400 text-xl" data-icon="lucide:arrow-up-right"></span>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Quick Access Row -->
+            <div class="flex flex-wrap justify-center gap-3 mt-10">
+                <a href="https://helixoriginator.github.io/Sanatana-Dharmic-Policy-Intelligence-Platform/" target="_blank" rel="noopener noreferrer" class="cta-btn-outline px-5 py-2.5 rounded-full text-xs font-medium inline-flex items-center gap-2 hover:border-blue-500/40 hover:bg-blue-500/5">
+                    <span class="iconify text-blue-400" data-icon="lucide:brain-circuit"></span>
+                    Policy Intelligence Platform
+                </a>
+                <a href="https://modi-1000-quiz-questions.netlify.app/" target="_blank" rel="noopener noreferrer" class="cta-btn-outline px-5 py-2.5 rounded-full text-xs font-medium inline-flex items-center gap-2 hover:border-orange-500/40 hover:bg-orange-500/5">
+                    <span class="iconify text-orange-400" data-icon="lucide:trophy"></span>
+                    1700+ Total Quiz Questions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Evidence & Pilot -->
+    <section id="evidence" class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-green-400 uppercase tracking-wider mb-4">Evidence & Pilots</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                    Proof, not promises.
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+                    Delhi rewards usefulness first, then narrative. Here is what the stack can already demonstrate on live data.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="iconify text-green-400 text-xl" data-icon="lucide:check-circle-2"></span>
+                        <span class="text-sm font-medium">PM-Kisan Diagnostics</span>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-green-400 text-sm mt-1 shrink-0" data-icon="lucide:check"></span>
+                            <span class="text-sm text-neutral-400 font-light">Benefit leakage mapping at district level</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-green-400 text-sm mt-1 shrink-0" data-icon="lucide:check"></span>
+                            <span class="text-sm text-neutral-400 font-light">Eligibility exclusion identification</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-green-400 text-sm mt-1 shrink-0" data-icon="lucide:check"></span>
+                            <span class="text-sm text-neutral-400 font-light">Payment delay pattern analysis</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-green-400 text-sm mt-1 shrink-0" data-icon="lucide:check"></span>
+                            <span class="text-sm text-neutral-400 font-light">Grievance bottleneck detection</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-green-400 text-sm mt-1 shrink-0" data-icon="lucide:check"></span>
+                            <span class="text-sm text-neutral-400 font-light">Administrative correction recommendations</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="iconify text-blue-400 text-xl" data-icon="lucide:target"></span>
+                        <span class="text-sm font-medium">Expandable to All Central Schemes</span>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-blue-400 text-sm mt-1 shrink-0" data-icon="lucide:circle-dot"></span>
+                            <span class="text-sm text-neutral-400 font-light">Scholarship disbursement gaps</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-blue-400 text-sm mt-1 shrink-0" data-icon="lucide:circle-dot"></span>
+                            <span class="text-sm text-neutral-400 font-light">Pension delivery friction</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-blue-400 text-sm mt-1 shrink-0" data-icon="lucide:circle-dot"></span>
+                            <span class="text-sm text-neutral-400 font-light">Land-record discrepancy mapping</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-blue-400 text-sm mt-1 shrink-0" data-icon="lucide:circle-dot"></span>
+                            <span class="text-sm text-neutral-400 font-light">Rural service delivery failure patterns</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="iconify text-blue-400 text-sm mt-1 shrink-0" data-icon="lucide:circle-dot"></span>
+                            <span class="text-sm text-neutral-400 font-light">Grievance-to-resolution efficiency tracking</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Recognition Pathways -->
+    <section id="recognition" class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-blue-400 uppercase tracking-wider mb-4">Institutional Recognition Pathways</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                    Routes to government<br>
+                    <span class="text-neutral-500">recognition</span>
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+                    The stack is already close in spirit to institutional recognition. Here are the four concrete pathways —
+                    and what is needed to activate each.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- DPIIT -->
+                <div class="recognition-card rounded-3xl p-8 md:p-10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
+                            <span class="iconify text-blue-400 text-2xl" data-icon="lucide:rocket"></span>
+                        </div>
+                        <span class="badge text-[10px] font-medium px-2.5 py-1 rounded-full">Primary Route</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">DPIIT Startup India Recognition</h3>
+                    <p class="text-xs text-neutral-500 mb-4">Department for Promotion of Industry and Internal Trade</p>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                        Structure as a formal entity presenting an innovation-led governance-tech platform.
+                        Eligibility requires innovation, scalable model, and prototype. The stack already qualifies in spirit —
+                        needs packaging as a product with entity structure, use case, and problem-solution narrative.
+                    </p>
+                    <div class="space-y-3">
+                        <p class="text-xs font-medium text-neutral-300">Requirements to activate:</p>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-blue-400">✓</span>
+                            <span class="text-xs text-neutral-500">Formal entity registration</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-blue-400">✓</span>
+                            <span class="text-xs text-neutral-500">Prototype / demo (already exists)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-blue-400">✓</span>
+                            <span class="text-xs text-neutral-500">Problem-solution narrative document</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-blue-400">✓</span>
+                            <span class="text-xs text-neutral-500">Pitch deck with evidence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AIM NITI Aayog -->
+                <div class="recognition-card rounded-3xl p-8 md:p-10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
+                            <span class="iconify text-amber-400 text-2xl" data-icon="lucide:lightbulb"></span>
+                        </div>
+                        <span class="badge-amber text-[10px] font-medium px-2.5 py-1 rounded-full">Strategic Route</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Atal Innovation Mission — NITI Aayog</h3>
+                    <p class="text-xs text-neutral-500 mb-4">National Institution for Transforming India</p>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                        AIM explicitly fosters innovation that solves sectoral and socio-economic problems through challenges,
+                        incubation, and startup support. A governance intelligence product with real pilots aligns directly
+                        with AIM's public-impact innovation mandate.
+                    </p>
+                    <div class="space-y-3">
+                        <p class="text-xs font-medium text-neutral-300">Requirements to activate:</p>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-amber-400">✓</span>
+                            <span class="text-xs text-neutral-500">1-2 real governance pilots</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-amber-400">✓</span>
+                            <span class="text-xs text-neutral-500">Demonstrable socio-economic outcomes</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-amber-400">✓</span>
+                            <span class="text-xs text-neutral-500">Scalable product articulation</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-amber-400">✓</span>
+                            <span class="text-xs text-neutral-500">Approach through incubator or challenge pathway</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital India Awards -->
+                <div class="recognition-card rounded-3xl p-8 md:p-10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-green-500/10 border border-green-500/20 flex items-center justify-center">
+                            <span class="iconify text-green-400 text-2xl" data-icon="lucide:award"></span>
+                        </div>
+                        <span class="badge-green text-[10px] font-medium px-2.5 py-1 rounded-full">Aspirational Route</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Digital India Awards</h3>
+                    <p class="text-xs text-neutral-500 mb-4">Ministry of Electronics & IT</p>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                        Honors innovative digital solutions by government entities. As an independent citizen platform,
+                        direct eligibility requires a government implementation partner — a district, department,
+                        university-government collaboration, or ministry/state body.
+                    </p>
+                    <div class="space-y-3">
+                        <p class="text-xs font-medium text-neutral-300">Requirements to activate:</p>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-green-400">→</span>
+                            <span class="text-xs text-neutral-500">Secure a pilot with a public body first</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-green-400">→</span>
+                            <span class="text-xs text-neutral-500">Government entity nomination or partnership</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-green-400">→</span>
+                            <span class="text-xs text-neutral-500">Measurable impact data from pilot</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ministry of Culture -->
+                <div class="recognition-card rounded-3xl p-8 md:p-10">
+                    <div class="flex items-start justify-between mb-6">
+                        <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center">
+                            <span class="iconify text-purple-400 text-2xl" data-icon="lucide:landmark"></span>
+                        </div>
+                        <span class="badge-purple text-[10px] font-medium px-2.5 py-1 rounded-full">Knowledge Wing Route</span>
+                    </div>
+                    <h3 class="text-lg font-medium mb-2">Ministry of Culture — Grant Schemes</h3>
+                    <p class="text-xs text-neutral-500 mb-4">Financial Assistance for Cultural Heritage</p>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                        Best suited for the Knowledge Bank wing — archival, documentation, manuscript preservation,
+                        research, and dissemination through audio-visual programs. Not the primary home for the
+                        governance-tech wing, but a strong parallel track for the civilizational knowledge infrastructure.
+                    </p>
+                    <div class="space-y-3">
+                        <p class="text-xs font-medium text-neutral-300">Applies to:</p>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-purple-400">✓</span>
+                            <span class="text-xs text-neutral-500">Sanatana Knowledge Bank (archival wing)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-purple-400">✓</span>
+                            <span class="text-xs text-neutral-500">Manuscript & heritage documentation</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="w-4 h-4 rounded border border-white/10 flex items-center justify-center text-[10px] text-purple-400">✓</span>
+                            <span class="text-xs text-neutral-500">Research & dissemination programs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategic Note -->
+            <div class="glass-card rounded-2xl p-6 md:p-8 mt-8 max-w-4xl">
+                <div class="flex items-start gap-4">
+                    <span class="iconify text-amber-400 text-xl shrink-0 mt-0.5" data-icon="lucide:info"></span>
+                    <div>
+                        <p class="text-sm font-medium mb-2">Strategic Note</p>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            DPIIT recognition is the cleanest first legitimacy layer. AIM alignment follows with real pilots.
+                            Digital India Awards become realistic after a government partnership. Culture Ministry runs as a parallel track
+                            for the Knowledge Bank. The recommended sequence: <span class="text-white">Entity → DPIIT → Pilot → AIM → Government Partner → Digital India Awards</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Briefs Section -->
+    <section id="briefs" class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-amber-400 uppercase tracking-wider mb-4">Institutional Briefs</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                    Three documents that<br>
+                    <span class="text-neutral-500">unlock recognition</span>
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+                    More impactful than launching 20 more linked sites. These three outputs will do more for recognition than any amount of platform expansion.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Government Brief -->
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6">
+                        <span class="iconify text-blue-400 text-xl" data-icon="lucide:building-2"></span>
+                    </div>
+                    <h3 class="text-base font-medium mb-3">Government Brief</h3>
+                    <p class="text-xs text-amber-400 font-medium mb-4 italic">
+                        "Civilizationally Rooted Governance Intelligence for Viksit Bharat 2047"
+                    </p>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                        For secretaries, ministers, and policy directors. Frames the stack as Indian-origin public systems design
+                        that improves scheme implementation — not philosophy, but measurable governance improvement.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Viksit Bharat 2047</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Policy Brief</span>
+                    </div>
+                </div>
+
+                <!-- Media Brief -->
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6">
+                        <span class="iconify text-amber-400 text-xl" data-icon="lucide:newspaper"></span>
+                    </div>
+                    <h3 class="text-base font-medium mb-3">Media Brief</h3>
+                    <p class="text-xs text-blue-400 font-medium mb-4 italic">
+                        "How Indian knowledge systems can improve scheme implementation"
+                    </p>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                        For journalists and editors. The headline that works: independent researcher builds dharma-based AI governance
+                        engine to detect why flagship welfare schemes fail on the ground.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Press Ready</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Reportable</span>
+                    </div>
+                </div>
+
+                <!-- Demo Deck -->
+                <div class="glass-card rounded-3xl p-8 md:p-10">
+                    <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center mb-6">
+                        <span class="iconify text-green-400 text-xl" data-icon="lucide:presentation"></span>
+                    </div>
+                    <h3 class="text-base font-medium mb-3">Demo Deck</h3>
+                    <p class="text-xs text-green-400 font-medium mb-4 italic">
+                        "Policy leakage detection, grievance mapping, rights-duty accountability — in plain English"
+                    </p>
+                    <p class="text-sm text-neutral-400 font-light leading-relaxed mb-6">
+                        For VCs, incubators, and technical reviewers. Shows the working system with live PM-Kisan pilot data,
+                        flow diagrams, and measurable outputs. No abstraction — just evidence.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Live Demo</span>
+                        <span class="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1 rounded-full text-neutral-400">Evidence-Based</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Media Angles -->
+    <section class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-neutral-400 uppercase tracking-wider mb-4">Media-Ready Narratives</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                    Three angles that work.
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+                    Media will not care about 390+ platforms. They care about one strong headline. Here are the three that can be reported.
+                </p>
+            </div>
+
+            <div class="space-y-6 max-w-4xl">
+                <div class="glass-card rounded-2xl p-6 md:p-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0 mt-1">
+                            <span class="text-sm font-semibold text-blue-400">1</span>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium mb-2">Citizen Innovation</h3>
+                            <p class="text-sm text-neutral-400 font-light leading-relaxed mb-3">
+                                A self-built, zero-institutional-support governance intelligence stack created by an independent researcher.
+                            </p>
+                            <p class="text-xs text-neutral-500 italic border-l-2 border-blue-500/30 pl-3">
+                                "Independent researcher builds AI governance engine to detect why flagship welfare schemes fail on the ground."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 md:p-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center shrink-0 mt-1">
+                            <span class="text-sm font-semibold text-amber-400">2</span>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium mb-2">Indian Knowledge Applied to Modern Systems</h3>
+                            <p class="text-sm text-neutral-400 font-light leading-relaxed mb-3">
+                                Not nostalgia — design logic. Civilizational knowledge turned into operational governance intelligence.
+                            </p>
+                            <p class="text-xs text-neutral-500 italic border-l-2 border-amber-500/30 pl-3">
+                                "From Sanskrit metaphysics to policy diagnostics: citizen-built platform maps implementation friction in PM-Kisan."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 md:p-8">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center shrink-0 mt-1">
+                            <span class="text-sm font-semibold text-green-400">3</span>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium mb-2">Public Accountability</h3>
+                            <p class="text-sm text-neutral-400 font-light leading-relaxed mb-3">
+                                The platform helps improve service delivery, rights visibility, and governance transparency for ordinary citizens.
+                            </p>
+                            <p class="text-xs text-neutral-500 italic border-l-2 border-green-500/30 pl-3">
+                                "Citizen-built governance twin shows why pensions, scholarships, and farm benefits leak — and how to fix them."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- The 90-Day Plan -->
+    <section class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-3xl mb-16">
+                <p class="text-xs font-medium text-green-400 uppercase tracking-wider mb-4">Next 90 Days</p>
+                <h2 class="text-3xl md:text-5xl font-medium tracking-tight mb-6">
+                    Compression, not expansion.
+                </h2>
+                <p class="text-neutral-400 text-base md:text-lg font-light leading-relaxed">
+                    The next genius move is not more breadth. It is taking the archive, the philosophy, the dashboards,
+                    the policy work, and the rights layer — and compressing them into one flagship.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="relative">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="timeline-dot"></div>
+                        <span class="text-xs font-medium text-blue-400">Days 1–30</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 ml-6">
+                        <h3 class="text-sm font-medium mb-3">Build the Flagship</h3>
+                        <ul class="space-y-2">
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-blue-400 mt-0.5">•</span>
+                                Live demo: one welfare scheme
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-blue-400 mt-0.5">•</span>
+                                One rights layer visualization
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-blue-400 mt-0.5">•</span>
+                                One district-level friction map
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-blue-400 mt-0.5">•</span>
+                                One recommendation engine output
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-blue-400 mt-0.5">•</span>
+                                One public report
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="timeline-dot" style="background: #f59e0b; box-shadow: 0 0 12px rgba(245,158,11,0.4);"></div>
+                        <span class="text-xs font-medium text-amber-400">Days 31–60</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 ml-6">
+                        <h3 class="text-sm font-medium mb-3">Package for Institutions</h3>
+                        <ul class="space-y-2">
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-amber-400 mt-0.5">•</span>
+                                Government brief: Viksit Bharat 2047
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-amber-400 mt-0.5">•</span>
+                                Media brief: headline-ready story
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-amber-400 mt-0.5">•</span>
+                                Demo deck: evidence, no abstraction
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-amber-400 mt-0.5">•</span>
+                                Entity formalization
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="timeline-dot" style="background: #22c55e; box-shadow: 0 0 12px rgba(34,197,94,0.4);"></div>
+                        <span class="text-xs font-medium text-green-400">Days 61–90</span>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 ml-6">
+                        <h3 class="text-sm font-medium mb-3">Activate Recognition</h3>
+                        <ul class="space-y-2">
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-green-400 mt-0.5">•</span>
+                                DPIIT Startup India application
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-green-400 mt-0.5">•</span>
+                                AIM / NITI Aayog approach
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-green-400 mt-0.5">•</span>
+                                Culture Ministry grant (Knowledge Bank)
+                            </li>
+                            <li class="text-xs text-neutral-400 font-light flex items-start gap-2">
+                                <span class="text-green-400 mt-0.5">•</span>
+                                Media outreach with targeted angles
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Creator Section -->
+    <section class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500/20 to-amber-500/20 border border-white/10 flex items-center justify-center mx-auto mb-8">
+                    <span class="iconify text-3xl gradient-text" data-icon="lucide:user-circle"></span>
+                </div>
+                <h2 class="text-2xl md:text-4xl font-medium tracking-tight mb-4">
+                    Kallol Chakrabarti
+                </h2>
+                <p class="text-sm text-blue-400 font-medium mb-6">Global Independent Researcher</p>
+                <p class="text-neutral-400 text-base font-light leading-relaxed max-w-2xl mx-auto mb-8">
+                    Creator of the Bharat Governance Twin and the Sanatana Knowledge Bank — one of the most comprehensive
+                    integrated Sanatana knowledge and governance intelligence infrastructures built independently in India.
+                    Bridging civilizational knowledge systems and modern public systems design to improve governance outcomes for every citizen.
+                </p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <a href="https://helixoriginator.github.io/Sanatana-Dharmic-Policy-Intelligence-Platform/" target="_blank" rel="noopener noreferrer" class="cta-btn-outline px-5 py-2.5 rounded-full text-xs font-medium inline-flex items-center gap-2">
+                        <span class="iconify text-green-400" data-icon="lucide:brain-circuit"></span>
+                        Policy Intelligence
+                    </a>
+                    <a href="https://helixoriginator.github.io/Sanatana-Knowledge-Bank-/" target="_blank" rel="noopener noreferrer" class="cta-btn-outline px-5 py-2.5 rounded-full text-xs font-medium inline-flex items-center gap-2">
+                        <span class="iconify text-amber-400" data-icon="lucide:library"></span>
+                        Knowledge Bank
+                    </a>
+                    <a href="https://sanatana-intelligence.netlify.app/" target="_blank" rel="noopener noreferrer" class="cta-btn-outline px-5 py-2.5 rounded-full text-xs font-medium inline-flex items-center gap-2">
+                        <span class="iconify text-blue-400" data-icon="lucide:sparkles"></span>
+                        Sanatana Intelligence
+                    </a>
+                    <a href="https://modi-1000-quiz-questions.netlify.app/" target="_blank" rel="noopener noreferrer" class="cta-btn-outline px-5 py-2.5 rounded-full text-xs font-medium inline-flex items-center gap-2">
+                        <span class="iconify text-orange-400" data-icon="lucide:trophy"></span>
+                        Modi 1000 Quiz
+                    </a>
+                    <a href="https://helixoriginator.github.io/modi-governance-quiz/" target="_blank" rel="noopener noreferrer" class="cta-btn-outline px-5 py-2.5 rounded-full text-xs font-medium inline-flex items-center gap-2">
+                        <span class="iconify text-green-400" data-icon="lucide:help-circle"></span>
+                        Governance Quiz 700+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider max-w-7xl mx-auto"></div>
+
+    <!-- Final CTA -->
+    <section class="relative z-10 py-24 md:py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="elevator-pitch rounded-3xl p-10 md:p-16 text-center max-w-5xl mx-auto">
+                <h2 class="text-2xl md:text-4xl font-medium tracking-tight mb-6">
+                    This is an Indian-origin governance<br class="hidden md:block">
+                    intelligence platform that turns<br class="hidden md:block">
+                    <span class="gradient-text">civilizational knowledge into measurable<br class="hidden md:block"> public-service improvement.</span>
+                </h2>
+                <p class="text-neutral-400 text-sm font-light max-w-2xl mx-auto mb-8">
+                    That is the line that can unlock both recognition and attention.
+                    Everything on this page exists. The stack is live. The pilot works. The next step is institutional engagement.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#recognition" class="cta-btn px-8 py-3.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                        Begin Recognition Process
+                        <span class="iconify" data-icon="lucide:arrow-right"></span>
+                    </a>
+                    <a href="#platforms" class="cta-btn-outline px-8 py-3.5 rounded-full text-sm font-medium inline-flex items-center gap-2">
+                        Explore Live Platforms
+                        <span class="iconify" data-icon="lucide:globe"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 border-t border-white/5 py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-amber-500 flex items-center justify-center">
+                            <span class="iconify text-white text-sm" data-icon="lucide:hexagon"></span>
+                        </div>
+                        <span class="font-semibold text-sm tracking-tight">Bharat Governance Twin</span>
+                    </div>
+                    <p class="text-xs text-neutral-500 font-light leading-relaxed max-w-sm mb-4">
+                        A civilizationally rooted governance intelligence platform that detects why public schemes
+                        leak at the ground level and shows administrators how to fix them.
+                    </p>
+                    <p class="text-xs text-neutral-600">
+                        Created by <span class="text-neutral-400">Kallol Chakrabarti</span>, Global Independent Researcher
+                    </p>
+                </div>
+                <div>
+                    <p class="text-xs font-medium text-neutral-300 uppercase tracking-wider mb-4">Platform</p>
+                    <ul class="space-y-2">
+                        <li><a href="#problem" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">The Problem</a></li>
+                        <li><a href="#solution" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">The Solution</a></li>
+                        <li><a href="#modules" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">Intelligence Stack</a></li>
+                        <li><a href="#platforms" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">Live Platforms</a></li>
+                        <li><a href="#evidence" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">Evidence</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-xs font-medium text-neutral-300 uppercase tracking-wider mb-4">Recognition</p>
+                    <ul class="space-y-2">
+                        <li><a href="#recognition" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">DPIIT Startup India</a></li>
+                        <li><a href="#recognition" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">Atal Innovation Mission</a></li>
+                        <li><a href="#recognition" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">Digital India Awards</a></li>
+                        <li><a href="#recognition" class="text-xs text-neutral-500 hover:text-white transition-colors duration-300">Ministry of Culture</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-neutral-600">
+                    © 2025 Bharat Governance Twin — HELIX Civilizational Operating System. All rights reserved.
+                </p>
+                <p class="text-[10px] text-neutral-600">
+                    One of the most comprehensive integrated Sanatana knowledge and governance intelligence infrastructures built independently in India.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mouse tracking for module cards
+        function updateMouse(event, card) {
+            const rect = card.getBoundingClientRect();
+            const x = ((event.clientX - rect.left) / rect.width) * 100;
+            const y = ((event.clientY - rect.top) / rect.height) * 100;
+            card.style.setProperty('--mouse-x', x + '%');
+            card.style.setProperty('--mouse-y', y + '%');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe glass-cards, module-cards, recognition-cards, and platform-btns
+        document.querySelectorAll('.glass-card, .module-card, .recognition-card, .platform-btn').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Nav background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.borderBottomColor = 'rgba(255,255,255,0.08)';
+            } else {
+                nav.style.borderBottomColor = 'rgba(255,255,255,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
